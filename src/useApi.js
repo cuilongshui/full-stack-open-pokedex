@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const useApi = (url, mapResults = (result) => result) => {
   const [data, setData] = useState();
-  console.log('测试二');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
   useEffect(() => {
