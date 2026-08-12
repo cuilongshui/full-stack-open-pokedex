@@ -17,6 +17,8 @@ jobs:
         run: npm install
       - name: lint
         run: npm run eslint
+      - name: Build
+        run: npm run build   # 如果不需要构建可删除此行
       - name: test
         run: npm run test
       - name: e2e tests
@@ -25,8 +27,8 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: Build
-        run: npm run build  # 如果不需要构建可删除此行
+      # - name: Build
+      #   run: npm run build
       - name: Deploy via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
